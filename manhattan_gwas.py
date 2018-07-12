@@ -9,6 +9,7 @@ def gwas_plot(f,
               sorter = np.append(range(1,23,1),['X'])):
     
     data = pd.read_csv(f,sep = '\t',index_col = False,usecols = list(column_dict))
+    filename = os.path.basename(f)
     
     data = data.rename(columns = column_dict)
     data = data.dropna(axis=0, how='any')
